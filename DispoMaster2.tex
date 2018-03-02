@@ -1,0 +1,92 @@
+\documentclass[12pt,a4paper,leqno]{article}
+
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\diam}{\operatorname{diam}}
+
+\theoremstyle{plain}
+\newtheorem{lause}[equation]{Lause}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Propositio}
+\newtheorem{kor}[equation]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[equation]{Määritelmä}
+\newtheorem{konj}[equation]{Konjektuuri}
+\newtheorem{esim}[equation]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem{huom}[equation]{Huomautus}
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\addtolength{\hoffset}{-1.15cm}
+\addtolength{\textwidth}{2.3cm}
+\addtolength{\voffset}{0.45cm}
+\addtolength{\textheight}{-0.9cm}
+
+\title{Korrespondenssianalyysi - geometrinen ja graafinen data-analyysin menetelmä (v. 0.5)}
+\author{Jussi Hirvonen}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{tabular}{llr}
+\hline
+\multicolumn{2}{c}{Paperin versiot} \\
+\cline{1-2}
+Versio    & muutokset & päivämäärä  \\
+\hline
+0.1      	& runko ja harjoittelua    & 5.10.2017     \\
+        	& runko ja sisältöäkin, oikoluku (W)       & 5.10.2017     \\
+0.2     	& uusiksi  & 31.1.2018     \\
+0.3       & työversio; kaikki teksti ja jäsennys    & 5.2.2018      \\
+0.4       & työversio; lähteitä, tutkielman rakenne-osan muokkausta    & 6.2.2018      \\
+0.5       & työversio; teksti uusiksi - turhat pätkät pois (v2)
+
+
+
+   & 6.2.2018      \\
+%% 1.0 		& www      & ddmmyyy       \\
+\hline
+\end{tabular}
+
+\tableofcontents
+% jaksot alkavat
+
+\include{dispjohd2}
+
+\include{disptutong2}
+
+\include{disprakenne2}
+
+\include{displahteet2}
+
+% Lähteet ilmestyvät vasta kun niihiin viitataan, ehkä ok. Mutta järjestys, numeroiduilla lähteillä? Kahma et al artikkeli meni näköjään tekijän nimen 
+% mukaa paikalleen lähdeluetteloon, ja LeRoux siirtyi numeroksi neljä?
+% kokeillaan Notepadilla tallennettua UTF-8 - viitetiedostoa Biblio060218. Ei toimi,  Command \texteuro unavailable in encoding T1.
+% 
+
+
+
+\bibliography{DispoRef2}
+	\bibliographystyle{plain}
+
+\end{document}

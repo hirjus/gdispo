@@ -1,0 +1,7 @@
+\babel@toc {finnish}{}
+\contentsline {section}{\numberline {1}Johdanto}{2}
+\contentsline {section}{\numberline {2}Tutkimusongelma}{4}
+\contentsline {section}{\numberline {3}Tutkielman rakenne ja esitystapa}{7}
+\contentsline {section}{\numberline {4}L\"ahdeaineisto ja data}{9}
+\contentsline {subsection}{\numberline {4.1}Kirjallisuus ja artikkelit}{9}
+\contentsline {subsection}{\numberline {4.2}Data ja R-koodi}{9}
