@@ -1,2 +1,2 @@
 # gdispo
-dispositio
+Dispositio 7.2.2018
