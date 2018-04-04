@@ -1,0 +1,241 @@
+\documentclass[12pt,a4paper,leqno]{article}
+
+\usepackage[ansinew]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+
+%drawmatrix-testailuun
+\usepackage{tikz}
+\usepackage{drawmatrix}
+% r-paketti furniture (table1) tuottaa latex-furmaatilla taulukoita ja muuta - vaatii tämän (4.4.2018)
+\usepackage{booktabs}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\diam}{\operatorname{diam}}
+
+\theoremstyle{plain}
+\newtheorem{lause}[equation]{Lause}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Propositio}
+\newtheorem{kor}[equation]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[equation]{Määritelmä}
+\newtheorem{konj}[equation]{Konjektuuri}
+\newtheorem{esim}[equation]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem{huom}[equation]{Huomautus}
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\addtolength{\hoffset}{-1.15cm}
+\addtolength{\textwidth}{2.3cm}
+\addtolength{\voffset}{0.45cm}
+\addtolength{\textheight}{-0.9cm}
+
+\title{Korrespondenssianalyysi - kaavaliite (v. 1.03)}
+
+\author{Jussi Hirvonen}
+\date{4.4.2018}
+\begin{document}
+
+\maketitle
+\begin{tabular}{llr}
+\hline
+\multicolumn{2}{c}{Paperin versiot} \\
+\cline{1-2}
+Versio    & muutokset & päivämäärä  \\
+\hline
+0.1      	& harjoittelua - drawmatrix    & 14.7.2017     \\
+1.01        	& harjoittelua - matriisiyhtälöt ja ca-peruskaavat& 5.8.2017       \\
+1.02        	& pientä korjailua, turhan poistoa	& 28.1.2018       \\
+1.03        	& lisäillään yksinkertaisen ca:n kaavoja, taulukoita R-paketilla furniture	& 4.4.2018       \\
+
+\hline
+\end{tabular}
+
+\tableofcontents
+
+\section{Kaavat ja matemaattisen merkinnät - työkalut}\label{johd}
+Tähän voisi kerätä Latex:in suositukset ja tavat esittää kaavoja, tässä on pientä epäselvyyttä mulla vielä. Esimerkkejä löytyy varsinaisesta luonnosdokkarista. Myös kaavito sun muut, kuvien insertointi on varsinaisessa luonnosdokkarissa.
+
+\section{Yksinkertaisia kaavoja leipätekstiin}\label{simppelit}
+
+Yksinkertaisen korrespondenssianalyysin esittelyssä tarvitaan muutama kaava, vaikka koitan niitä liitteen ulkopuolella välttää.
+
+Kahden luokittelumuuttujan ristiintaulukointi (kontigenssitaulu)
+
+En käytä kaavaliitteen notaatiota leipätekstissä, vaan yksinkertaisempaa tapaa. Aloitetaan taulukolla.
+
+Koitetaan furniture-paketilla vääntää taulukko. Tämä menee oikealta yli (output = latex) .
+
+\begin{table}
+
+\caption{\label{tab:}Alle kouluikäinen lapsi todennäköisesti kärsii, jos hänen äitinsä käy työssä }
+\centering
+\begin{tabular}[t]{llllllll}
+\toprule
+  & 1 & 2 & 3 & 4 & 5 & Test & P-Value\\
+\midrule
+ & n = 295 & n = 600 & n = 593 & n = 889 & n = 732 &  & \\
+maa &  &  &  &  &  & Chi Square: 588.1 & <.001\\
+FI & 47 (15.9\%) & 188 (31.3\%) & 149 (25.1\%) & 423 (47.6\%) & 303 (41.4\%) &  & \\
+HU & 219 (74.2\%) & 288 (48\%) & 225 (37.9\%) & 190 (21.4\%) & 75 (10.2\%) &  & \\
+SE & 29 (9.8\%) & 124 (20.7\%) & 219 (36.9\%) & 276 (31\%) & 354 (48.4\%) &  & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Toinen koe (output = latex2):
+
+\begin{table}[ ht ] 
+\centering 
+\caption{Alle kouluikäinen lapsi todennäköisesti kärsii, jos hänen äitinsä käy työssä }
+\begin{tabular}{ l c c c c c }
+\hline 
+ & \multicolumn{ 5 }{c}{ V6 }\\ 
+  & 1 & 2 & 3 & 4 & 5 \\ 
+  & n = 295 & n = 600 & n = 593 & n = 889 & n = 732 \\ 
+ \hline 
+maa &   &   &   &   &  \\ 
+\hspace{6pt}    FI & 47 (15.9\%) & 188 (31.3\%) & 149 (25.1\%) & 423 (47.6\%) & 303 (41.4\%)\\ 
+\hspace{6pt}    HU & 219 (74.2\%) & 288 (48\%) & 225 (37.9\%) & 190 (21.4\%) & 75 (10.2\%)\\ 
+\hspace{6pt}    SE & 29 (9.8\%) & 124 (20.7\%) & 219 (36.9\%) & 276 (31\%) & 354 (48.4\%)\\ 
+ \hline
+      \end{tabular}
+      \end{table} 
+
+Yritetään vielä yksinkertaisempaa:
+
+\begin{table}[ ht ] 
+\centering 
+\caption{Alle kouluikäinen lapsi todennäköisesti kärsii, jos hänen äitinsä käy työssä }
+\begin{tabular}{ l c c c c c c }
+\hline 
+ & \multicolumn{ 6 }{c}{ V6 }\\ 
+  & 1 & 2 & 3 & 4 & 5 & Total \\ 
+  & n = 4 & n = 4 & n = 4 & n = 4 & n = 4 & n = 4 \\ 
+ \hline 
+maa &   &   &   &   &   &  \\ 
+\hspace{6pt}    FI & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%)\\ 
+\hspace{6pt}    HU & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%)\\ 
+\hspace{6pt}    SE & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%)\\ 
+\hspace{6pt}    Total & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%) & 1 (25\%)\\ 
+ \hline
+      \end{tabular}
+      \end{table}  
+      
+{Bigskip}
+
+
+\section{Matriisit ja niiden havainnollistaminen}\label{matriisikaaviot}
+Drawmatrix toimii, mutta vaatii säätöä. Voisi olla leipätekstissä hyvä matriisiyhtälöiden havainnollistamiseen.
+
+Kummallinen kohdistus. \\
+
+$\left(
+\drawmatrix A_{\hspace{0.5 mm}\vspace{0.5 mm}i}
+\drawmatrix B^{-1}
+\right)
+\drawmatrix C$
+
+Ainakin SVD - osuudessa voi hyödyntää tätä:
+
+
+$\left(
+\drawmatrix S_j
+\drawmatrix[fill=gray, width=2ex]s_{k-1}
+\drawmatrix[fill=gray, width=2ex]s_{k}
+\drawmatrix D
+\right)
+\drawmatrix[height=.5]U$
+
+\section{Matriisiyhtälöt ilman kaavioita}\label{matriisiyhtälöt}
+
+Tässä lähteenä Greenacren kirja (ca in practice) ja sen liite Theory of CA. Muistiinpanoja löytyy, joissa viitataan myös Biplots in practice - kirjaan. Ei valmis, lähinnä kaavojen kirjoittelun harjoittelua.
+
+\vspace{5mm}
+
+\textbf{Korrespondenssianalyysin perusyhtälöt:}
+\vspace{5mm} \\
+Datamatriisin $\boldsymbol{N}$ alkiot ovat ei-negatiivisia (eli nollat sallittuja) ja samassa mitta-asteikossa (jos mitta-asteikko on intervalli- tai suhdeasteikko mittayksiköiden on oltava samoja), ja $n$ on taulukon alkoiden summa. GDA-kirjassa on tarkennettu tätä vaatimusta ei-negatiivisuudesta.
+
+Korrespondenssimatriisi  $\boldsymbol{P}$ saadaan jakamalla matriisin $\boldsymbol{N}$  alkiot niiden summalla $n$ (tai ehkä parempi merkintä $N$) . Merkitään matriisin  $\boldsymbol{P}$  rivisummien vektoria $\boldsymbol{r}$ ja
+sarakesummien vektoria $\boldsymbol{c}$. Korrespondenssianalyysin termein nämä vektorit ovat rivi- ja sarakemassojen vektoreita, ja niitä vastaavat 
+diagonaalimatriisit ovat $\boldsymbol{D_r}$ ja $\boldsymbol{D_c}$.
+
+Korrespondenssianalyysin perusrakenne (algoritmi?) on tämä. Singulaariarvohajoitelma (singular value decomposition) tuottaa ratkaisun kun sitä sovelletaan standardoituun residuaalimatriisiin $\boldsymbol{S}$. 
+\begin{equation}
+\boldsymbol{S} = \boldsymbol{D_r}^{-1/2}(\boldsymbol{P} - \boldsymbol{r}\boldsymbol{c}^T)\boldsymbol{D_c}^{-1/2} \label{A}
+\end{equation}
+
+tai
+\[ 
+\boldsymbol{S} = \boldsymbol{D_r}^{1/2} (\boldsymbol{D_r}^{-1} \boldsymbol{P} \boldsymbol{D_c}^{-1} - \boldsymbol{1}\boldsymbol{1}^{T} ) \boldsymbol{D_c}^{-1/2}  \;\;\; .
+\]
+
+Toinen esitystapa on hyödyllinen, kun tarkastellaan CA:n yhteyksiä muihin läheisiin menetelmiin (erityisesti kai log ratio analysis of compositional data?).  Ehkäpä siksi, että matriisin alkiolle elementtimuodossa saadaan vastaavasti kaksi esitystapaa.
+Ensimmäinen on 
+\[
+s_{ij} = \frac{p_{ij}-r_{i}c_{j}} { \sqrt{r_{i}c_{j} } }
+\]
+
+ja toinen
+\[
+s_{ij} = \sqrt{r_{i}} \left( \frac{p_{ij}}{r_{i}c_{j}} \right) \sqrt{c_{j}} \;\;\; .
+\]
+
+Mitäköhän tuosta pitäisi nähdä? Selitykset löytyvät em. teorialiitteestä.
+
+Singulaariarvohajoitelma (singular value decomposition, SVD) matriisille $\boldsymbol{S}$ on
+
+\[ 
+\boldsymbol{S} = \boldsymbol{U} \boldsymbol{D_{\alpha}} \boldsymbol{V}^{T}
+\]
+
+missä $\boldsymbol{D_{\alpha}}$ on diagonaalimatriisi, jonka alkiot ovat singulaariarvot suuruusjärjestyksessä $\alpha_{1}\geq \alpha_{1} \geq \hdots$
+
+Näin saadaan standardikoordinaatit ja principal-koordinaatit riveille ja sarakkeille.
+
+Rivien standardikoordinaatit
+\begin{equation}
+\boldsymbol{\Phi} = \boldsymbol{D_r}^{-1/2} \boldsymbol{U} \label{B} 
+\end{equation}
+
+Sarakkeiden standardikoordinaatit
+\begin{equation}
+ \boldsymbol{\Gamma} = \boldsymbol{D_c}^{-1/2} \boldsymbol{V} \label{C}
+\end{equation}
+
+Rivien principal-koordinaatit
+\begin{equation}
+ \boldsymbol{F} =   \boldsymbol{D_r}^{-1/2} \boldsymbol{U}  \boldsymbol{D_{\alpha}} = \boldsymbol{\Phi} \boldsymbol{D_{\alpha}} \label{D}
+\end{equation}
+
+Sarakkeiden principal-koordinaatit
+\begin{equation}
+ \boldsymbol{G}  = \boldsymbol{D_c}^{-1/2} \boldsymbol{V} \boldsymbol{D_{\alpha}} = \boldsymbol{\Gamma}  \boldsymbol{D_{\alpha}} \label{E}
+\end{equation}
+
+
+
+
+
+
+
+
+
+\end{document}
