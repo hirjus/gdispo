@@ -62,7 +62,7 @@ Versio    & muutokset & p‰iv‰m‰‰r‰  \\
 0.1      	& harjoittelua - drawmatrix    & 14.7.2017     \\
 1.01        	& harjoittelua - matriisiyht‰lˆt ja ca-peruskaavat& 5.8.2017       \\
 1.02        	& pient‰ korjailua, turhan poistoa	& 28.1.2018       \\
-1.03        	& lis‰ill‰‰n yksinkertaisen ca:n kaavoja, taulukoita R-paketilla furniture	& 4.4.2018       \\
+1.03        	& lis‰ill‰‰n yksinkertaisen ca:n kaavoja, taulukoita R-paketilla furniture	& 6.4.2018       \\
 
 \hline
 \end{tabular}
@@ -74,13 +74,50 @@ T‰h‰n voisi ker‰t‰ Latex:in suositukset ja tavat esitt‰‰ kaavoja, t‰ss‰ on pient
 
 \section{Yksinkertaisia kaavoja leip‰tekstiin}\label{simppelit}
 
-Yksinkertaisen korrespondenssianalyysin esittelyss‰ tarvitaan muutama kaava, vaikka koitan niit‰ liitteen ulkopuolella v‰ltt‰‰.
+Yksinkertaisen korrespondenssianalyysin esittelyss‰ tarvitaan muutama kaava, vaikka koitan niit‰ liitteen ulkopuolella v‰ltt‰‰(mallia on otettu MG:n PCAiP-kirjasta, ss 25-).
 
-Kahden luokittelumuuttujan ristiintaulukointi (kontigenssitaulu)
+Taulukon homogeenisyyden tai riippumattomuushypoteestin tutkiminen, miten paljon rivit (tai sarakkeet) eroavat toisistaan.
 
-En k‰yt‰ kaavaliitteen notaatiota leip‰tekstiss‰, vaan yksinkertaisempaa tapaa. Aloitetaan taulukolla.
+Tuttu $\chi^{2}$ - testisuure saadaa, kun lasketaan yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa
 
-Koitetaan furniture-paketilla v‰‰nt‰‰ taulukko. T‰m‰ menee oikealta yli (output = latex) .
+\[
+\chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
+\]
+
+T‰m‰ voidaan esitt‰‰ ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveitt‰in vastaavat termit rivisummalla painotettuna:
+
+\[
+rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
+\]
+
+Kun jaamme n‰m‰ tekij‰t havaintojen kokonaism‰‰r‰ll‰ $n$, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon $\frac{\chi^{2}}{n}$.
+\[
+ \frac{\chi^{2}}{n} = \phi^{2} .
+ \]
+ 
+ Tunnusluku $\phi^{2}$ on korrespondenssianalyysiss‰ kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukum‰‰r‰st‰. Tilastotieteess‰ tunnusluvulla on useita vaihtoehtoisia nimi‰ (esim. mean square contingency coefficient), ja sen neliˆjuurta kutsutaan $\phi$ - kertoimeksi.
+ 
+ Pit‰‰kˆ euklidinen et‰isyys m‰‰ritell‰? Esimerkiksi kolmen sarakkeen taulukossa kahden rivin 1 ja 3 tavanomainen euklidinen (pisteit‰ n-ulotteisessa avaruudessa) et‰isyys on
+ 
+ \[
+ \sqrt{(s_{11} - s_{31})^2 + (s_{12} - s_{32})^2 + (s_{13} - s_{33})^2}
+ \]
+ 
+ 
+ Rivien $\chi^{2}$ - et‰isyys on painotettu euklidinen et‰isyys, jossa painoina ovat riviprofiilin odotetut arvot. Ne ovat riippumattomuushypoteesin mukaisesti riviprofiilien keskiarvoprofiilin vastaavat alkioit $r_{i}$ .
+\[
+ \sqrt{\frac{(s_{11} - s_{31})^2} { r_{1}} + \frac{(s_{12} - s_{32})^2} {r_{2}} + \frac{(s_{13} - s_{33})^2} {r_{3}}}
+\]
+
+Inertia voidaa esitt‰‰ rivien ja ``keskiarvorivin `` (sentroidin) $$\chi^{2}$$ -et‰isyyksien neliˆiden painotettuna summana, jossa painoina ovat rivien massat $m_{i}$ ja summa lasketaan yli rivien ${i}$.
+\[
+ \phi^{2} = \sum_{i} (massa \: m_{i}) \times (profiilin \: i \: \chi^{2} - etaisyys \: sentroidista)^{2}
+\]
+\section{Taulukoita}\label{tabl1}
+
+Kahden luokittelumuuttujan ristiintaulukointi (kontigenssitaulu), ja muitakin variantteja ja pohjia voi tehd‰ R-paketilla furniture (esim.), jossa output-formaatiksi voi valita latex tai latex2. Vaatii LateX-dokkarissa paketin booktabs.
+
+T‰m‰ menee oikealta yli (output = latex) .
 
 \begin{table}
 
@@ -138,10 +175,11 @@ maa &   &   &   &   &   &  \\
       \end{tabular}
       \end{table}  
       
-{Bigskip}
+
 
 
 \section{Matriisit ja niiden havainnollistaminen}\label{matriisikaaviot}
+
 Drawmatrix toimii, mutta vaatii s‰‰tˆ‰. Voisi olla leip‰tekstiss‰ hyv‰ matriisiyht‰lˆiden havainnollistamiseen.
 
 Kummallinen kohdistus. \\
