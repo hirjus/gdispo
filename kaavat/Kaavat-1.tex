@@ -206,6 +206,59 @@ Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m‰‰rittelm‰
 
 Analyysiss‰ osa riveist‰ tai sarakkeista voidaan j‰tt‰‰ pois ratkaisun laskennasta ns. passiviisiksi, ja esitt‰‰ kartalla t‰ydent‰vin‰ pistein‰ (supplementary points). Ne eiv‰t vaikuta ratkaisuun, eli teknisesti niiden massa on nolla, mutta pisteiden esityksen (projektion) tarkkuus voidaan arvioida. T‰ydent‰vien profiilien on kuintenkin oltava yhteismitallisia taulukon datan kanssa. Mik‰ tahansa ei k‰y (kts. CAinP, vast.luku).\\
 
+Pinotut tai yhdistetyt matriisit (``stacked matrices''). Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m‰‰ritt‰m‰n taulukon (kontingenssitaulukko) analyysi‰, mutta tutkimusasetelmaa voi melko helposti muuttaa useamman muuttujan analyysiksi. Menetelm‰n matemaattinen perusta ja ratkaisualgoritmi (SVD) toimivat, tulkinta vain muuttuu. Itse asiassa menetelm‰n yleisyys tekee sen v‰‰r‰nkin k‰ytˆn mahdolliseksi.\\
+
+Yksinkertaisin laajennus on lis‰t‰ alkuper‰isen taulukon alle toinen taulukko. Rivit ovat esimerkiss‰ maittan summattuja vastauksia, ja niiden alle voidaan lis‰t‰ joku toinen luokittelumuuttuja. Havaintojen m‰‰r‰ yhditetyss‰ (``pinotussa'' ) taulussa kaksinkertaistuu. Miksi t‰m‰ ei ei vaikuta tuloksiin v‰‰rist‰v‰sti??\\
+
+Merkit‰‰n edellisten analyysien kuuden maan ja viiden vastausvaihtoehdon taulukkoa matriisilla $\boldsymbol{ A}_{I  J}$, miss‰ $I$ on rivien ja $J$ sarakkeiden lukum‰‰r‰. Taulukoidaan ik‰luokan (1 - 6) ja sukupuolen ($f$ = nainen, $m$ = mies) vuorovaikutusmuuttuja ($f1,\dots , f6$ ja $m1,\dots , m6$) samojen vastausvaihtoehtojen kanssa. Jos t‰t‰ taulukkoa merkit‰‰n matriisilla 
+$\boldsymbol{ B}_{I^{`}  J}$, voimme muodostaa yhdistetyn matriisin\\
+
+\[
+\drawmatrix A_{I J}
+\]
+
+\[
+\drawmatrix B_{I^{`}  J}
+\]
+
+Miten p‰‰llekk‰isten matriisien ymp‰rille saisi sulut?\\
+
+Rivien lukum‰‰r‰ on molemmissa matriiseissa sama, koska luokkia sattuu olemaan kuusi sek‰ maa- ett‰ ik‰- ja sukupuoli - luokittelumuuttujissa. Kun matriisit ovat dimensioiltaan ja myˆs muuttujien sis‰llˆn kannalta samankaltaiset, niit‰ kutsutaan yhteensopiviksi (``matched matrix''). T‰llˆin yksinkertaista korrespondenssianalyyis‰ voi soveltaa tutkimusongelmaan, jossa halutaan erotella jonkun ryhm‰n sis‰inen vaihtelu ryhmien v‰lisiest‰ vaihtelusta. (Greenacren ehdottama ABBA - analyysi).\\
+
+\[
+\drawmatrix A_{I J} \drawmatrix B_{I J}
+\]
+
+\[
+\drawmatrix B_{I  J} \drawmatrix A_{I J}
+\]
+
+ABBA on erityistapaus yleisemm‰st‰ moniulotteisen taulukon (multiway table) analyysist‰, jossa useita kahden muuttujan taulukoita ``pinotaan'' p‰‰llekk‰in ja rinnakkain. Voimme ottaa yhden kysymyksen vastausten lis‰ksi analyysiin mukaan useamman kysymyksen vastaukset laajentamalla kahden p‰‰llekk‰isen matriisin taulukkoa oikealle.\\
+
+Teknisesti analyysi on yksinkertainen korrespondenssianalyysi, miten t‰m‰ tulkitaan?\\
+
+\[
+\drawmatrix[scale=1] A_{I k1}^{k1} \;\;\; \drawmatrix A_{I k2}^{k2} \;\;\; \drawmatrix A_{I k3}^{k3} \;\;\; \drawmatrix [width=0.5] A_{I k4}^{k4} \;\;\; \drawmatrix [scale=1, width=1.5] A_{I k5}^{k5}
+\]
+
+\[
+\drawmatrix B_{I^{'}  k1}^{k1} \;\; \drawmatrix B_{I^{'}  k2}^{k2} \;\; \drawmatrix B_{I^{'}  k3}^{k3}  \;\; \drawmatrix [width=0.5] B_{I^{'}  {k4}}^{k4} \;\; \drawmatrix [scale=1, width=1.5] B_{I^{'} k5}^{k5}
+\]
+
+\[
+\; \drawmatrix[height =1.5] C_{I^{''}  k1}^{k1} \;\; \drawmatrix[height =1.5] C_{I^{''}  k2}^{k2} \; \drawmatrix[height =1.5] C_{I^{''}  k3}^{k3} \;\; \drawmatrix [width=0.5, height =1.5] C_{I^{''}  k4}^{k4} \; \drawmatrix [scale=1, width=1.5, height =1.5] C_{I^{''} k5}^{k5}
+\]
+
+
+
+
+
+
+
+
+
+
+
 
 
 
