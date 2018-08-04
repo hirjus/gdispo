@@ -1,6 +1,6 @@
 \documentclass[12pt,a4paper,leqno]{article}
-
-\usepackage[ansinew]{inputenc}
+% !TEX encoding = UTF-8 Unicode
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[finnish]{babel}
 \usepackage{amsthm}
@@ -14,7 +14,7 @@
 %drawmatrix-testailuun
 \usepackage{tikz}
 \usepackage{drawmatrix}
-% r-paketti furniture (table1) tuottaa latex-furmaatilla taulukoita ja muuta - vaatii t‰m‰n (4.4.2018)
+% r-paketti furniture (table1) tuottaa latex-furmaatilla taulukoita ja muuta - vaatii t√§m√§n (4.4.2018)
 \usepackage{booktabs}
 
 \newcommand{\R}{\mathbb{R}}
@@ -32,7 +32,7 @@
 \newtheorem{kor}[equation]{Korollaari}
 
 \theoremstyle{definition}
-\newtheorem{maar}[equation]{M‰‰ritelm‰}
+\newtheorem{maar}[equation]{M√§√§ritelm√§}
 \newtheorem{konj}[equation]{Konjektuuri}
 \newtheorem{esim}[equation]{Esimerkki}
 
@@ -57,24 +57,26 @@
 \hline
 \multicolumn{2}{c}{Paperin versiot} \\
 \cline{1-2}
-Versio    & muutokset & p‰iv‰m‰‰r‰  \\
+Versio    & muutokset & p√§iv√§m√§√§r√§  \\
 \hline
 0.1      	& harjoittelua - drawmatrix    & 14.7.2017     \\
-1.01        	& harjoittelua - matriisiyht‰lˆt ja ca-peruskaavat& 5.8.2017       \\
-1.02        	& pient‰ korjailua, turhan poistoa	& 28.1.2018       \\
-1.03        	& lis‰ill‰‰n yksinkertaisen ca:n kaavoja, taulukoita R-paketilla furniture	& 6.4.2018 \\
-1.04       	& ca:n loput matriisiyht‰lˆt, drawmatrix-kokeiluja 	& 20.5.2018\\
+1.01        	& harjoittelua - matriisiyht√§l√∂t ja ca-peruskaavat& 5.8.2017       \\
+1.02        	& pient√§ korjailua, turhan poistoa	& 28.1.2018       \\
+1.03        	& lis√§ill√§√§n yksinkertaisen ca:n kaavoja, taulukoita R-paketilla furniture	& 6.4.2018 \\
+1.04       	& ca:n loput matriisiyht√§l√∂t, drawmatrix-kokeiluja 	& 20.5.2018\\
+1.05          & Siirretty Rmarkdown-dokkariksi  & 13.6.2018\\
+1.06		& utf8 inputenc					  &	  5.8.2018\\
 \hline
 \end{tabular}
 
 \tableofcontents
 
-\section{Kaavat ja matemaattisen merkinn‰t - tyˆkalut}\label{johd}
-T‰h‰n voisi ker‰t‰ Latex:in suositukset ja tavat esitt‰‰ kaavoja, t‰ss‰ on pient‰ ep‰selvyytt‰ mulla viel‰. Esimerkkej‰ lˆytyy varsinaisesta luonnosdokkarista. Myˆs kaavito sun muut, kuvien insertointi on varsinaisessa luonnosdokkarissa.
+\section{Kaavat ja matemaattisen merkinn√§t - ty√∂kalut}\label{johd}
+T√§h√§n voisi ker√§t√§ Latex:in suositukset ja tavat esitt√§√§ kaavoja, t√§ss√§ on pient√§ ep√§selvyytt√§ mulla viel√§. Esimerkkej√§ l√∂ytyy varsinaisesta luonnosdokkarista. My√∂s kaavito sun muut, kuvien insertointi on varsinaisessa luonnosdokkarissa.
 
-\section{Yksinkertaisia kaavoja leip‰tekstiin}\label{simppelit}
+\section{Yksinkertaisia kaavoja leip√§tekstiin}\label{simppelit}
 
-Yksinkertaisen korrespondenssianalyysin esittelyss‰ tarvitaan muutama kaava, vaikka koitan niit‰ liitteen ulkopuolella v‰ltt‰‰(mallia on otettu MG:n PCAiP-kirjasta, ss 25-).
+Yksinkertaisen korrespondenssianalyysin esittelyss√§ tarvitaan muutama kaava, vaikka koitan niit√§ liitteen ulkopuolella v√§ltt√§√§(mallia on otettu MG:n PCAiP-kirjasta, ss 25-).
 
 Taulukon homogeenisyyden tai riippumattomuushypoteestin tutkiminen, miten paljon rivit (tai sarakkeet) eroavat toisistaan.
 
@@ -84,45 +86,45 @@ Tuttu $\chi^{2}$ - testisuure saadaa, kun lasketaan yhteen jokaisen solun havait
 \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
 \]
 
-T‰m‰ voidaan esitt‰‰ ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveitt‰in vastaavat termit rivisummalla painotettuna:
+T√§m√§ voidaan esitt√§√§ ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveitt√§in vastaavat termit rivisummalla painotettuna:
 
 \[
 rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
 \]
 
-Kun jaamme n‰m‰ tekij‰t havaintojen kokonaism‰‰r‰ll‰ $n$, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon $\frac{\chi^{2}}{n}$.
+Kun jaamme n√§m√§ tekij√§t havaintojen kokonaism√§√§r√§ll√§ $n$, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon $\frac{\chi^{2}}{n}$.
 \[
  \frac{\chi^{2}}{n} = \phi^{2} .
  \]
  
-Tunnusluku $\phi^{2}$ on korrespondenssianalyysiss‰ kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukum‰‰r‰st‰. Tilastotieteess‰ tunnusluvulla on useita vaihtoehtoisia nimi‰ (esim. mean square contingency coefficient), ja sen neliˆjuurta kutsutaan $\phi$ - kertoimeksi.
+Tunnusluku $\phi^{2}$ on korrespondenssianalyysiss√§ kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukum√§√§r√§st√§. Tilastotieteess√§ tunnusluvulla on useita vaihtoehtoisia nimi√§ (esim. mean square contingency coefficient), ja sen neli√∂juurta kutsutaan $\phi$ - kertoimeksi.
 
-T‰ss‰ siirryt‰‰n kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleens‰ olisi paikallaan.\\
+T√§ss√§ siirryt√§√§n kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleens√§ olisi paikallaan.\\
  
-Frekvenssitaulukossa (jossa kaikki taulukon luvut on jaettu havaintojen lukum‰‰r‰ll‰ n) riviprofiilien 1 ja 3  (euklidinen) et‰isyys on 
+Frekvenssitaulukossa (jossa kaikki taulukon luvut on jaettu havaintojen lukum√§√§r√§ll√§ n) riviprofiilien 1 ja 3  (euklidinen) et√§isyys on 
  \[
  \sqrt{(p_{11} - p_{31})^2 + (p_{12} - p_{32})^2 + (p_{13} - _{33})^2+ (p_{14} - _{34})^2+ (p_{15} - _{35})^2}
  \]
  
  
- Rivien $\chi^{2}$ - et‰isyys on painotettu euklidinen et‰isyys, jossa painoina ovat riviprofiilin odotetut arvot. Ne ovat riippumattomuushypoteesin mukaisesti riviprofiilien keskiarvoprofiilin vastaavat alkioit $r_{i}$ .
+ Rivien $\chi^{2}$ - et√§isyys on painotettu euklidinen et√§isyys, jossa painoina ovat riviprofiilin odotetut arvot. Ne ovat riippumattomuushypoteesin mukaisesti riviprofiilien keskiarvoprofiilin vastaavat alkioit $r_{i}$ .
 \[
  \sqrt{\frac{(p_{11} - p_{31})^2} { r_{1}} + \dots + \frac{(p_{15} - p_{35})^2} {r_{5}}}
 \]
 
-Inertia voidaa esitt‰‰ rivien ja ``keskiarvorivin `` (sentroidin) $$\chi^{2}$$ -et‰isyyksien neliˆiden painotettuna summana, jossa painoina ovat rivien massat $m_{i}$ ja summa lasketaan yli rivien ${i}$.
+Inertia voidaa esitt√§√§ rivien ja ``keskiarvorivin `` (sentroidin) $$\chi^{2}$$ -et√§isyyksien neli√∂iden painotettuna summana, jossa painoina ovat rivien massat $m_{i}$ ja summa lasketaan yli rivien ${i}$.
 \[
  \phi^{2} = \sum_{i} (massa \: m_{i}) \times (profiilin \: i \: \chi^{2} - etaisyys \: sentroidista)^{2}
 \]
 \section{Taulukoita}\label{tabl1}
 
-Kahden luokittelumuuttujan ristiintaulukointi (kontigenssitaulu), ja muitakin variantteja ja pohjia voi tehd‰ R-paketilla furniture (esim.), jossa output-formaatiksi voi valita latex tai latex2. Vaatii LateX-dokkarissa paketin booktabs.
+Kahden luokittelumuuttujan ristiintaulukointi (kontigenssitaulu), ja muitakin variantteja ja pohjia voi tehd√§ R-paketilla furniture (esim.), jossa output-formaatiksi voi valita latex tai latex2. Vaatii LateX-dokkarissa paketin booktabs.
 
-T‰m‰ meni oikealta yli (output = latex), vaan ei en‰‰n .
+T√§m√§ meni oikealta yli (output = latex), vaan ei en√§√§n .
 
 \begin{table}
 
-\caption{\label{tab:}Alle kouluik‰inen lapsi todenn‰kˆisesti k‰rsii, jos h‰nen ‰itins‰ k‰y tyˆss‰ }
+\caption{\label{tab:}Alle kouluik√§inen lapsi todenn√§k√∂isesti k√§rsii, jos h√§nen √§itins√§ k√§y ty√∂ss√§ }
 \centering
 \begin{tabular}[t]{llllllll}
 \toprule
@@ -141,7 +143,7 @@ Toinen koe (output = latex2):
 
 \begin{table}[ ht ] 
 \centering 
-\caption{Alle kouluik‰inen lapsi todenn‰kˆisesti k‰rsii, jos h‰nen ‰itins‰ k‰y tyˆss‰ }
+\caption{Alle kouluik√§inen lapsi todenn√§k√∂isesti k√§rsii, jos h√§nen √§itins√§ k√§y ty√∂ss√§ }
 \begin{tabular}{ l c c c c c }
 \hline 
  & \multicolumn{ 5 }{c}{ V6 }\\ 
@@ -156,11 +158,11 @@ maa &   &   &   &   &  \\
       \end{tabular}
       \end{table} 
 
-Yritet‰‰n viel‰ yksinkertaisempaa, taulukon luonti on vain mennyt pieleen.
+Yritet√§√§n viel√§ yksinkertaisempaa, taulukon luonti on vain mennyt pieleen.
 
 \begin{table}[ ht ] 
 \centering 
-\caption{Alle kouluik‰inen lapsi todenn‰kˆisesti k‰rsii, jos h‰nen ‰itins‰ k‰y tyˆss‰ }
+\caption{Alle kouluik√§inen lapsi todenn√§k√∂isesti k√§rsii, jos h√§nen √§itins√§ k√§y ty√∂ss√§ }
 \begin{tabular}{ l c c c c c c }
 \hline 
  & \multicolumn{ 6 }{c}{ V6 }\\ 
@@ -181,7 +183,7 @@ maa &   &   &   &   &   &  \\
 
 \section{Matriisit ja niiden havainnollistaminen}\label{matriisikaaviot}
 
-Drawmatrix toimii, mutta vaatii s‰‰tˆ‰. Voisi olla leip‰tekstiss‰ hyv‰ matriisiyht‰lˆiden havainnollistamiseen.
+Drawmatrix toimii, mutta vaatii s√§√§t√∂√§. Voisi olla leip√§tekstiss√§ hyv√§ matriisiyht√§l√∂iden havainnollistamiseen.
 
 Kummallinen kohdistus. \\
 
@@ -191,7 +193,7 @@ $\left(
 \right)
 \drawmatrix C$
 
-Ainakin SVD - osuudessa voi hyˆdynt‰‰ t‰t‰:
+Ainakin SVD - osuudessa voi hy√∂dynt√§√§ t√§t√§:
 
 
 $\left(
@@ -202,15 +204,15 @@ $\left(
 \right)
 \drawmatrix[height=.5]U$
 
-Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m‰‰rittelm‰n frekvenssitaulukon analyysi‰. Taulukon rivit ovat havaintoyksikˆiden (individuals, havaintoyksikkˆ) aggregoituja summia, sarakkeet muuttujia.\\
+Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m√§√§rittelm√§n frekvenssitaulukon analyysi√§. Taulukon rivit ovat havaintoyksik√∂iden (individuals, havaintoyksikk√∂) aggregoituja summia, sarakkeet muuttujia.\\
 
-Analyysiss‰ osa riveist‰ tai sarakkeista voidaan j‰tt‰‰ pois ratkaisun laskennasta ns. passiviisiksi, ja esitt‰‰ kartalla t‰ydent‰vin‰ pistein‰ (supplementary points). Ne eiv‰t vaikuta ratkaisuun, eli teknisesti niiden massa on nolla, mutta pisteiden esityksen (projektion) tarkkuus voidaan arvioida. T‰ydent‰vien profiilien on kuintenkin oltava yhteismitallisia taulukon datan kanssa. Mik‰ tahansa ei k‰y (kts. CAinP, vast.luku).\\
+Analyysiss√§ osa riveist√§ tai sarakkeista voidaan j√§tt√§√§ pois ratkaisun laskennasta ns. passiviisiksi, ja esitt√§√§ kartalla t√§ydent√§vin√§ pistein√§ (supplementary points). Ne eiv√§t vaikuta ratkaisuun, eli teknisesti niiden massa on nolla, mutta pisteiden esityksen (projektion) tarkkuus voidaan arvioida. T√§ydent√§vien profiilien on kuintenkin oltava yhteismitallisia taulukon datan kanssa. Mik√§ tahansa ei k√§y (kts. CAinP, vast.luku).\\
 
-Pinotut tai yhdistetyt matriisit (``stacked matrices''). Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m‰‰ritt‰m‰n taulukon (kontingenssitaulukko) analyysi‰, mutta tutkimusasetelmaa voi melko helposti muuttaa useamman muuttujan analyysiksi. Menetelm‰n matemaattinen perusta ja ratkaisualgoritmi (SVD) toimivat, tulkinta vain muuttuu. Itse asiassa menetelm‰n yleisyys tekee sen v‰‰r‰nkin k‰ytˆn mahdolliseksi.\\
+Pinotut tai yhdistetyt matriisit (``stacked matrices''). Yksinkertainen korrespondenssianalyysi on kahden luokittelumuuttujan m√§√§ritt√§m√§n taulukon (kontingenssitaulukko) analyysi√§, mutta tutkimusasetelmaa voi melko helposti muuttaa useamman muuttujan analyysiksi. Menetelm√§n matemaattinen perusta ja ratkaisualgoritmi (SVD) toimivat, tulkinta vain muuttuu. Itse asiassa menetelm√§n yleisyys tekee sen v√§√§r√§nkin k√§yt√∂n mahdolliseksi.\\
 
-Yksinkertaisin laajennus on lis‰t‰ alkuper‰isen taulukon alle toinen taulukko. Rivit ovat esimerkiss‰ maittan summattuja vastauksia, ja niiden alle voidaan lis‰t‰ joku toinen luokittelumuuttuja. Havaintojen m‰‰r‰ yhditetyss‰ (``pinotussa'' ) taulussa kaksinkertaistuu. Miksi t‰m‰ ei ei vaikuta tuloksiin v‰‰rist‰v‰sti??\\
+Yksinkertaisin laajennus on lis√§t√§ alkuper√§isen taulukon alle toinen taulukko. Rivit ovat esimerkiss√§ maittan summattuja vastauksia, ja niiden alle voidaan lis√§t√§ joku toinen luokittelumuuttuja. Havaintojen m√§√§r√§ yhditetyss√§ (``pinotussa'' ) taulussa kaksinkertaistuu. Miksi t√§m√§ ei ei vaikuta tuloksiin v√§√§rist√§v√§sti??\\
 
-Merkit‰‰n edellisten analyysien kuuden maan ja viiden vastausvaihtoehdon taulukkoa matriisilla $\boldsymbol{ A}_{I  J}$, miss‰ $I$ on rivien ja $J$ sarakkeiden lukum‰‰r‰. Taulukoidaan ik‰luokan (1 - 6) ja sukupuolen ($f$ = nainen, $m$ = mies) vuorovaikutusmuuttuja ($f1,\dots , f6$ ja $m1,\dots , m6$) samojen vastausvaihtoehtojen kanssa. Jos t‰t‰ taulukkoa merkit‰‰n matriisilla 
+Merkit√§√§n edellisten analyysien kuuden maan ja viiden vastausvaihtoehdon taulukkoa matriisilla $\boldsymbol{ A}_{I  J}$, miss√§ $I$ on rivien ja $J$ sarakkeiden lukum√§√§r√§. Taulukoidaan ik√§luokan (1 - 6) ja sukupuolen ($f$ = nainen, $m$ = mies) vuorovaikutusmuuttuja ($f1,\dots , f6$ ja $m1,\dots , m6$) samojen vastausvaihtoehtojen kanssa. Jos t√§t√§ taulukkoa merkit√§√§n matriisilla 
 $\boldsymbol{ B}_{I^{`}  J}$, voimme muodostaa yhdistetyn matriisin\\
 
 \[
@@ -221,9 +223,9 @@ $\boldsymbol{ B}_{I^{`}  J}$, voimme muodostaa yhdistetyn matriisin\\
 \drawmatrix B_{I^{`}  J}
 \]
 
-Miten p‰‰llekk‰isten matriisien ymp‰rille saisi sulut?\\
+Miten p√§√§llekk√§isten matriisien ymp√§rille saisi sulut?\\
 
-Rivien lukum‰‰r‰ on molemmissa matriiseissa sama, koska luokkia sattuu olemaan kuusi sek‰ maa- ett‰ ik‰- ja sukupuoli - luokittelumuuttujissa. Kun matriisit ovat dimensioiltaan ja myˆs muuttujien sis‰llˆn kannalta samankaltaiset, niit‰ kutsutaan yhteensopiviksi (``matched matrix''). T‰llˆin yksinkertaista korrespondenssianalyyis‰ voi soveltaa tutkimusongelmaan, jossa halutaan erotella jonkun ryhm‰n sis‰inen vaihtelu ryhmien v‰lisiest‰ vaihtelusta. (Greenacren ehdottama ABBA - analyysi).\\
+Rivien lukum√§√§r√§ on molemmissa matriiseissa sama, koska luokkia sattuu olemaan kuusi sek√§ maa- ett√§ ik√§- ja sukupuoli - luokittelumuuttujissa. Kun matriisit ovat dimensioiltaan ja my√∂s muuttujien sis√§ll√∂n kannalta samankaltaiset, niit√§ kutsutaan yhteensopiviksi (``matched matrix''). T√§ll√∂in yksinkertaista korrespondenssianalyyis√§ voi soveltaa tutkimusongelmaan, jossa halutaan erotella jonkun ryhm√§n sis√§inen vaihtelu ryhmien v√§lisiest√§ vaihtelusta. (Greenacren ehdottama ABBA - analyysi).\\
 
 \[
 \drawmatrix A_{I J} \drawmatrix B_{I J}
@@ -233,9 +235,9 @@ Rivien lukum‰‰r‰ on molemmissa matriiseissa sama, koska luokkia sattuu olemaan k
 \drawmatrix B_{I  J} \drawmatrix A_{I J}
 \]
 
-ABBA on erityistapaus yleisemm‰st‰ moniulotteisen taulukon (multiway table) analyysist‰, jossa useita kahden muuttujan taulukoita ``pinotaan'' p‰‰llekk‰in ja rinnakkain. Voimme ottaa yhden kysymyksen vastausten lis‰ksi analyysiin mukaan useamman kysymyksen vastaukset laajentamalla kahden p‰‰llekk‰isen matriisin taulukkoa oikealle.\\
+ABBA on erityistapaus yleisemm√§st√§ moniulotteisen taulukon (multiway table) analyysist√§, jossa useita kahden muuttujan taulukoita ``pinotaan'' p√§√§llekk√§in ja rinnakkain. Voimme ottaa yhden kysymyksen vastausten lis√§ksi analyysiin mukaan useamman kysymyksen vastaukset laajentamalla kahden p√§√§llekk√§isen matriisin taulukkoa oikealle.\\
 
-Teknisesti analyysi on yksinkertainen korrespondenssianalyysi, miten t‰m‰ tulkitaan?\\
+Teknisesti analyysi on yksinkertainen korrespondenssianalyysi, miten t√§m√§ tulkitaan?\\
 
 \[
 \drawmatrix[scale=1] A_{I k1}^{k1} \;\;\; \drawmatrix A_{I k2}^{k2} \;\;\; \drawmatrix A_{I k3}^{k3} \;\;\; \drawmatrix [width=0.5] A_{I k4}^{k4} \;\;\; \drawmatrix [scale=1, width=1.5] A_{I k5}^{k5}
@@ -252,42 +254,26 @@ Teknisesti analyysi on yksinkertainen korrespondenssianalyysi, miten t‰m‰ tulkit
 
 
 
+\section{Matriisiyht√§l√∂t }\label{matriisiyhtalot}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Matriisiyht‰lˆt }\label{matriisiyht‰lˆt}
-
-T‰ss‰ l‰hteen‰ Greenacren kirja (ca in practice) ja sen liite Theory of CA. Muistiinpanoja lˆytyy, joissa viitataan myˆs Biplots in practice - kirjaan. Kev‰‰n 2017 kurssin luentokalvoja on myˆs k‰ytetty. Lis‰ill‰‰n viel‰ k‰sitteit‰ LeRouxin ja Rouanetin kirjasta.
+T√§ss√§ l√§hteen√§ Greenacren kirja (ca in practice) ja sen liite Theory of CA. Muistiinpanoja l√∂ytyy, joissa viitataan my√∂s Biplots in practice - kirjaan. Kev√§√§n 2017 kurssin luentokalvoja on my√∂s k√§ytetty. Lis√§ill√§√§n viel√§ k√§sitteit√§ LeRouxin ja Rouanetin kirjasta.
 
 \vspace{5mm}
 
-\textbf{Korrespondenssianalyysin perusyht‰lˆt:}
+\textbf{Korrespondenssianalyysin perusyht√§l√∂t:}
 \vspace{5mm} \\
-Datamatriisilla $\boldsymbol{N}$ on $I$ rivi‰ ja $J$ sarakketta ($I x J$ ). Alkiot ovat ei-negatiivisia (eli nollat sallittuja) ja samassa mitta-asteikossa. Jos mitta-asteikko on intervalli- tai suhdeasteikko, mittayksikˆiden on oltava samoja (esim. euroja, metrej‰). Taulukon alkioiden summa on $\sum_{i} \sum_{j}n_{ij} = n$, miss‰ $i = 1, \dots , I$ ja $j = 1, \dots , J$. GDA-kirjassa on tarkennettu t‰t‰ vaatimusta ei-negatiivisuudesta. \\
+Datamatriisilla $\boldsymbol{N}$ on $I$ rivi√§ ja $J$ sarakketta ($I x J$ ). Alkiot ovat ei-negatiivisia (eli nollat sallittuja) ja samassa mitta-asteikossa. Jos mitta-asteikko on intervalli- tai suhdeasteikko, mittayksik√∂iden on oltava samoja (esim. euroja, metrej√§). Taulukon alkioiden summa on $\sum_{i} \sum_{j}n_{ij} = n$, miss√§ $i = 1, \dots , I$ ja $j = 1, \dots , J$. GDA-kirjassa on tarkennettu t√§t√§ vaatimusta ei-negatiivisuudesta. \\
 
 Korrespondenssimatriisi  $\boldsymbol{P}$ saadaan jakamalla matriisin $\boldsymbol{N}$  alkiot niiden summalla $n$ . 
-Merkit‰‰n matriisin  $\boldsymbol{P}$  rivisummien vektoria $\boldsymbol{r}$ (= $(r_{1}, \dots, r_{I})$) ja sarakesummien vektoria $\boldsymbol{c}$ (=
-$(c_{1}, \dots, c_{J})$).  Niit‰ vastaavat diagonaalimatriisit ovat $\boldsymbol{D_r}$ ja $\boldsymbol{D_c}$. \\
+Merkit√§√§n matriisin  $\boldsymbol{P}$  rivisummien vektoria $\boldsymbol{r}$ (= $(r_{1}, \dots, r_{I})$) ja sarakesummien vektoria $\boldsymbol{c}$ (=
+$(c_{1}, \dots, c_{J})$).  Niit√§ vastaavat diagonaalimatriisit ovat $\boldsymbol{D_r}$ ja $\boldsymbol{D_c}$. \\
 
-Korrespondenssianalyysin perusrakenne (algoritmi?) on t‰m‰. Singulaariarvohajoitelma (singular value decomposition) tuottaa ratkaisun kun sit‰ sovelletaan standardoituun residuaalimatriisiin $\boldsymbol{S}$. 
+Korrespondenssianalyysin perusrakenne (algoritmi?) on t√§m√§. Singulaariarvohajoitelma (singular value decomposition) tuottaa ratkaisun kun sit√§ sovelletaan standardoituun residuaalimatriisiin $\boldsymbol{S}$. 
 \begin{equation}
 \boldsymbol{S} = \boldsymbol{D_r}^{-1/2}(\boldsymbol{P} - \boldsymbol{r}\boldsymbol{c}^T)\boldsymbol{D_c}^{-1/2} \label{A}
 \end{equation}
 
-Residuaalimatriisi voidaan esitt‰‰ myˆs ns. kontingenssi-suhdelukujen (contingency ratio) avulla.
+Residuaalimatriisi voidaan esitt√§√§ my√∂s ns. kontingenssi-suhdelukujen (contingency ratio) avulla.
 
 \[
 \boldsymbol{D_r}^{-1} \boldsymbol{P} \boldsymbol{D_c}^{-1} = \left( \frac{p_{ij}} {r_{i} c{j}} \right)
@@ -297,7 +283,7 @@ Residuaalimatriisi voidaan esitt‰‰ myˆs ns. kontingenssi-suhdelukujen (contingen
 \boldsymbol{S} = \boldsymbol{D_r}^{1/2} (\boldsymbol{D_r}^{-1} \boldsymbol{P} \boldsymbol{D_c}^{-1} - \boldsymbol{1}\boldsymbol{1}^{T} ) \boldsymbol{D_c}^{-1/2}  \;\;\; .
 \]
 
-Toinen esitystapa on hyˆdyllinen, kun tarkastellaan CA:n yhteyksi‰ muihin l‰heisiin menetelmiin (log ratio analysis of compositional data, moniulotteinen skaalaus (?), lineaarinen diskriminanttianalyysi, kanoninen korrelaatioanalyysi, p‰‰komponettianalyysi, kaksoiskuvat, yleens‰ SVD-perusteiset dimensioden v‰hent‰misen menetelm‰t).
+Toinen esitystapa on hy√∂dyllinen, kun tarkastellaan CA:n yhteyksi√§ muihin l√§heisiin menetelmiin (log ratio analysis of compositional data, moniulotteinen skaalaus (?), lineaarinen diskriminanttianalyysi, kanoninen korrelaatioanalyysi, p√§√§komponettianalyysi, kaksoiskuvat, yleens√§ SVD-perusteiset dimensioden v√§hent√§misen menetelm√§t).
 
  
 \[
@@ -309,7 +295,7 @@ ja toinen
 s_{ij} = \sqrt{r_{i}} \left( \frac{p_{ij}}{r_{i}c_{j}} \right) \sqrt{c_{j}} \;\;\; .
 \]
 
-Mit‰kˆh‰n tuosta pit‰isi n‰hd‰? Selitykset lˆytyv‰t em. teorialiitteest‰.
+Mit√§k√∂h√§n tuosta pit√§isi n√§hd√§? Selitykset l√∂ytyv√§t em. teorialiitteest√§.
 
 Singulaariarvohajoitelma (singular value decomposition, SVD) matriisille $\boldsymbol{S}$ on
 
@@ -317,18 +303,18 @@ Singulaariarvohajoitelma (singular value decomposition, SVD) matriisille $\bolds
 \boldsymbol{S} = \boldsymbol{U} \boldsymbol{D_{\alpha}} \boldsymbol{V}^{T}
 \]
 
-miss‰ $\boldsymbol{D_{\alpha}}$ on diagonaalimatriisi, jonka alkiot ovat singulaariarvot suuruusj‰rjestyksess‰ $\alpha_{1}\geq \alpha_{1} \geq \hdots$
+miss√§ $\boldsymbol{D_{\alpha}}$ on diagonaalimatriisi, jonka alkiot ovat singulaariarvot suuruusj√§rjestyksess√§ $\alpha_{1}\geq \alpha_{1} \geq \hdots$
 
-Matriisit $\boldsymbol{U}$ ja $\boldsymbol{V}$ ovat ortogonaalisia singulaarivektoreiden matriiseja. Singulaariarvohajoitelman merkitys dimensioiden v‰hent‰miselle perustuu Eckart - Young - teoreemaan. Teoreema (30-luvulta?) kertoo, ett‰ saamme pienimm‰n neliˆsumman $m$ - ulotteisen approksimaation matriisille $\boldsymbol{S}$ (CAinP, ss. 244) matriisien 
-$\boldsymbol{U}$ ja $\boldsymbol{V}$ ensimm‰isten sarakkeiden ja ensimm‰isten singulaariarvojen avulla.
+Matriisit $\boldsymbol{U}$ ja $\boldsymbol{V}$ ovat ortogonaalisia singulaarivektoreiden matriiseja. Singulaariarvohajoitelman merkitys dimensioiden v√§hent√§miselle perustuu Eckart - Young - teoreemaan. Teoreema (30-luvulta?) kertoo, ett√§ saamme pienimm√§n neli√∂summan $m$ - ulotteisen approksimaation matriisille $\boldsymbol{S}$ (CAinP, ss. 244) matriisien 
+$\boldsymbol{U}$ ja $\boldsymbol{V}$ ensimm√§isten sarakkeiden ja ensimm√§isten singulaariarvojen avulla.
 
 \[
 \boldsymbol{S}_{(m)} = \boldsymbol{U}_{(m)} \boldsymbol{D}_{\alpha(m)} \boldsymbol{V}_{(m)}^{T}
 \] 
 
-Korrrespondenssianalyysin ratkaisualgoritmissa t‰t‰ tulosta on muokattava niin, ett‰ rivien ja sarakkeiden massat huomioidaan pienimm‰n neliˆsumman approksimaatiossa painoina.
+Korrrespondenssianalyysin ratkaisualgoritmissa t√§t√§ tulosta on muokattava niin, ett√§ rivien ja sarakkeiden massat huomioidaan pienimm√§n neli√∂summan approksimaatiossa painoina.
 
-N‰in saadaan standardikoordinaatit ja principal-koordinaatit riveille ja sarakkeille.\\
+N√§in saadaan standardikoordinaatit ja principal-koordinaatit riveille ja sarakkeille.\\
 
 Rivien standardikoordinaatit
 \begin{equation}
@@ -350,7 +336,7 @@ Sarakkeiden principal-koordinaatit
  \boldsymbol{G}  = \boldsymbol{D_c}^{-\frac{1}{2}} \boldsymbol{V} \boldsymbol{D_{\alpha}} = \boldsymbol{\Gamma}  \boldsymbol{D_{\alpha}} \label{E}
 \end{equation}
 
-P‰‰akseleiden inertiat (principal inertias) $\lambda_{k}$
+P√§√§akseleiden inertiat (principal inertias) $\lambda_{k}$
 
 \begin{equation}
 \lambda_{k} = \alpha_{k}^2, k = 1,\dots,K,
@@ -359,7 +345,7 @@ K = min \{ I-1, J-1 \}
 
 Bilineaarinen korresepondenssimalli 
 
-Korrespondenssimatriisi $\boldsymbol{P}$ voidaan esitt‰‰ matriisi- ja alkiomuodossa ns. palautuskaavana (reconstitution formula).
+Korrespondenssimatriisi $\boldsymbol{P}$ voidaan esitt√§√§ matriisi- ja alkiomuodossa ns. palautuskaavana (reconstitution formula).
 
 \begin{equation}
 \boldsymbol{P} = \boldsymbol{D}_{r} \left( \boldsymbol{1}\boldsymbol{1}^{T} + \boldsymbol{\Phi}\boldsymbol{D}_{\lambda}^{\frac {1}{2}}\boldsymbol{\Gamma}^{T}\right)\boldsymbol{D}_{c}
@@ -369,11 +355,11 @@ Korrespondenssimatriisi $\boldsymbol{P}$ voidaan esitt‰‰ matriisi- ja alkiomuodo
 p_ {ij}= r_{i}c_{j} \left(1 + \sum_{k=1}^{K} \sqrt{\lambda_{k}} \phi_{ik} \gamma_{jk} \right)
 \end{equation}
 
-T‰ss‰ viitataan s. 101 (13.4), 109 (14.9), ja 109-110 (14.10 ja 14.11). Palautuskavoilla on monta esitystapaa bilineaarisessa mallissa.\\
+T√§ss√§ viitataan s. 101 (13.4), 109 (14.9), ja 109-110 (14.10 ja 14.11). Palautuskavoilla on monta esitystapaa bilineaarisessa mallissa.\\
 
-Rivien ja sarakkeiden riippuvuus ja transitioyht‰lˆt. ss. 244, 108-109 skalaariversiot.\\
+Rivien ja sarakkeiden riippuvuus ja transitioyht√§l√∂t. ss. 244, 108-109 skalaariversiot.\\
 
-P‰‰koordinaatit standardikoordinaattien funktiona (ns. barysentrinen ominaisuus - barycentric relationships)\\
+P√§√§koordinaatit standardikoordinaattien funktiona (ns. barysentrinen ominaisuus - barycentric relationships)\\
 
 \begin{equation}
 \boldsymbol{F} = \boldsymbol{D}_{r}^{-1} \boldsymbol{P}\boldsymbol{\Gamma}\\
@@ -383,7 +369,7 @@ P‰‰koordinaatit standardikoordinaattien funktiona (ns. barysentrinen ominaisuus 
 \boldsymbol{G} = \boldsymbol{D}_{c}^{-1} \boldsymbol{P}^{T}\boldsymbol{\Phi}
 \end{equation}
 
-P‰‰koordinaatit p‰‰koordinaattien funktiointa:\\
+P√§√§koordinaatit p√§√§koordinaattien funktiointa:\\
 
 \begin{equation}
 \boldsymbol{F} = \boldsymbol{D}_{r}^{-1} \boldsymbol{P}\boldsymbol{G}\boldsymbol{D}_{\lambda}^{-\frac{1}{2}}
@@ -393,7 +379,7 @@ P‰‰koordinaatit p‰‰koordinaattien funktiointa:\\
 \boldsymbol{G} = \boldsymbol{D}_{c}^{-1} \boldsymbol{P}^{T}\boldsymbol{F}\boldsymbol{D}_{\lambda}^{-\frac{1}{2}}
 \end{equation}
 
-Yht‰lˆt (9) ja (10) esitt‰v‰t profiilipisteet ideaalipisteiden (vertex points) painotettuina keskiarvoina, painoina profiilin elementit. Asymmetriset kartat (rivien tai sarakkeiden suhteen) perustuvat n‰ihin yht‰lˆihin. Yht‰lˆiden (11) ja (12) kahdet p‰‰koordinaatit ovat perusta symmetrisille kartoille. Myˆs niit‰ yhdist‰‰ barisentrinen painotetun keskiarvon riippuvuus, mutta mukana ovat skaalaustekij‰t
+Yht√§l√∂t (9) ja (10) esitt√§v√§t profiilipisteet ideaalipisteiden (vertex points) painotettuina keskiarvoina, painoina profiilin elementit. Asymmetriset kartat (rivien tai sarakkeiden suhteen) perustuvat n√§ihin yht√§l√∂ihin. Yht√§l√∂iden (11) ja (12) kahdet p√§√§koordinaatit ovat perusta symmetrisille kartoille. My√∂s niit√§ yhdist√§√§ barisentrinen painotetun keskiarvon riippuvuus, mutta mukana ovat skaalaustekij√§t
  $\frac{1}{\sqrt{\lambda_{i}}}$. Ne ovat jokaisessa dimensiossa eri suuruisia.
 
 
