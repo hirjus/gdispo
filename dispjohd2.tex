@@ -1,0 +1,20 @@
+\section{Johdanto}
+\label{dispjohd1}
+
+
+
+Korrespondenssianalyysi (correspondence analysis, CA) soveltuu erityisesti (mutta ei ainoastaan) luokitteluasteikon muuttujien riippuvuuksien analyysiin.  Menetelmän matemaattiset perusteet muotoili Jean-Paul Benzecri Ranskassa 60-luvulla, ja sosiologi Pierre Bourdieun tutkimukset 1980-luvun alussa tekivät siitä kansainvälisesti tunnetun (historiasta kts. \cite {RefWorks:70}, \cite {RefWorks:68} ja Suomen osalta \cite {RefWorks:74}). Yksinkertainen tai ``klassinen'' korrespondenssianalyysi tarkastelee kahta luokitteluasteikon muuttujaa, useamman muuttujan korrespondenssianalyysissä muuttujia on enemmän (multiple correspondence analysis, MCA). \\
+
+Menetelmä on ei-parametrinen, ja teknisesti sen voi määritellä luokitteluasteikon muuttujien pääkomponenttianalyysiksi. Tärkein väline riippuvuuksien tutkimisessa on yleensä kaksiulotteinen kuva, jossa kahden muuttujan tapauksessa esitetään molemmat muuttujat.
+
+Tutkielman nimessä termi ``geometrinen data-analyysi'' on uudehkosta ranskalaisten tutkijoiden oppikirjasta \cite {RefWorks:68}. He korostavat alkuperäisiä ideoita, joissa menetelmän perusta -- abstrakti algebrallinen teoria -- on keskeinen asia. Tämä varsin vaikea esitystapa on luultavasti hidastanut menetelmä yleistymistä, mutta on toki perusteltu. On hieman vaikeampi ymmärtää, miksi menetelmän esittäminen matriisiyhtälöinä tuomitaan. Sen perusta on tunnettu singulaariarvohajoitelma (singular value dekomposition), ja tavoitteena on muista monimuuttujamenetelmistä tuttu dimensioiden vähentäminen.
+
+\bigskip
+
+Tässä työssä pyrin esittämään korrespondenssianalyysin graafisena data-analyysin menetelmänä, ja esitän matemaattiset perusteet omana jaksona. 
+Michael Greenacren oppikirjat ovat tehneet menetelmää tunnetuksi juuri tässä hengessä (\cite {RefWorks:55} ). Tilastollisesti perusteltujen graafisten analyysimenetelmien esittely on perusteltua, sillä ranskalainen ``matriisilaskennan kritiikki'' lienee oikeassa ainakin siinä, että matriisiyhtälöiden kautta menetelmä soveltaminen ei monelle tule ymmärrettäväksi. Kun menetelmän ongelmalliset kohdat juuri graafisessa esitystavassa ovat melko hyvin tiedossa (kts. esim. \cite {RefWorks:73}), voi esityksen rakentaa oikean datan kautta eteneväksi. Oikea aineisto on oleellinen, sillä eräs menetelmän alkuperäinen tavoite oli juuri suurten aineistojen analyysissä ( \cite {RefWorks:68} s. 15, ``on erittäin vaikeaa osoittaa kotiakvaarioissa, että verkko on tehokas'').\\
+
+Graafinen data-analyysi ei korrespondenssianalyysissäkään rajoitu vain yhden lopullisen kuvan esittämiseen, vaan se on vaiheittain etenevä tutkimusprosessi. Se on my;s taitolaji, ja graafinen esitys elää analyysin mukana alun eksploratiivisista ja kuvailevista versioista lopullisiin johtopäätökset kiteyttäviin visualisointeihin. Tässä matriisiyhtälöiden ymmärtämisellä on roolinsa, sillä analyysin tarkentaminen vaati myös ymmärrystä siitä, miten kuvaa voi muokata tarkoituksenmukaiseksi.\\
+
+Tutkielma kirjoitetaan lukijalle, joka tuntee jonkun verran tilastollisia menetelmiä ja haluaa tehdä data-analyysiä.
+
